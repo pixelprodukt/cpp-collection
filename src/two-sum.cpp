@@ -33,6 +33,7 @@ Only one valid answer exists.
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include "../include/two-sum.hpp"
 
 using namespace std;
 
@@ -69,14 +70,4 @@ vector<int> twoSumGpt(vector<int> &nums, int target)
         numMap[nums[i]] = i;
     }
     return {}; // Shouldn't reach here as the problem guarantees a solution
-}
-
-int main()
-{
-    vector<int> nums = {12, 17, 2, 7, 11, 15};
-    vector<int> answer = twoSum(nums, 9);
-
-    std::cout << "Solution: {" + to_string(answer.at(0)) + ", " + to_string(answer.at(1)) + "}" << endl;
-
-    return 0;
 }

@@ -31,7 +31,8 @@ s consists of English letters, digits, symbols and spaces.
 
 #include <iostream>
 #include <vector>
-#include <unordered_map>
+#include <algorithm>
+#include "../include/longest-substring-without-repeating-characters.hpp"
 
 using namespace std;
 
@@ -62,24 +63,7 @@ int lengthOfLongestSubstring(string str)
     }
 
     string answerString(longestSubStringFound.begin(), longestSubStringFound.end());
-    cout << answerString << endl;
+    cout << "Longest found substring: " + answerString << endl;
 
     return longestSubStringFound.size();
-}
-
-int main()
-{
-    string inputOne = "abcabcbb";
-    string inputTwo = "bbbbb";
-    string inputThree = "pwwkew";
-
-    int answerOne = lengthOfLongestSubstring(inputOne);
-    int answerTwo = lengthOfLongestSubstring(inputTwo);
-    int answerThree = lengthOfLongestSubstring(inputThree);
-
-    cout << answerOne << endl;
-    cout << answerTwo << endl;
-    cout << answerThree << endl;
-
-    return 0;
 }
