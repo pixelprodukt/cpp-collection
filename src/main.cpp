@@ -2,6 +2,7 @@
 #include <vector>
 #include "../include/two-sum.hpp"
 #include "../include/longest-substring-without-repeating-characters.hpp"
+#include "../include/longest-palindromic-substring.hpp"
 
 using namespace std;
 
@@ -23,6 +24,15 @@ int main()
     cout << "lengthOfLongestSubstring Solution One:   " + to_string(answerOne) << endl;
     cout << "lengthOfLongestSubstring Solution Two:   " + to_string(answerTwo) << endl;
     cout << "lengthOfLongestSubstring Solution Three: " + to_string(answerThree) << endl;
+
+    string palindromTestOne = "babad";
+    string palindromTestTwo = "cbbd";
+
+    string palindromSolutionOne = longestPalindrome(palindromTestOne);
+    string palindromSolutionTwo = longestPalindrome(palindromTestTwo);
+
+    cout << "Palindrom Solution one: " + palindromSolutionOne << endl;
+    cout << "Palindrom Solution two: " + palindromSolutionTwo << endl;
 
     return 0;
 }
