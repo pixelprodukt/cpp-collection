@@ -30,11 +30,11 @@ s consist of only digits and English letters.
 
 using namespace std;
 
-bool startAndEndAreSameChar(const vector<char> &buffer) {
+bool startAndEndAreSameChar(const vector<char>& buffer) {
     return (buffer.at(0) == buffer.at(buffer.size() - 1));
 }
 
-bool isPalindromeOrTooSmall(const vector<char> &buffer) {
+bool isPalindromeOrTooSmall(const vector<char>& buffer) {
     if (buffer.size() < 2)
         return true;
     if (startAndEndAreSameChar(buffer)) {
