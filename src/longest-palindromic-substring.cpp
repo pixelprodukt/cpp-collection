@@ -30,38 +30,45 @@ s consist of only digits and English letters.
 
 using namespace std;
 
-bool startAndEndAreSameChar(const vector<char> &vec) {
-    return (vec.at(0) == vec.at(vec.size() - 1));
+bool startAndEndAreSameChar(const vector<char> &buffer) {
+    return (buffer.at(0) == buffer.at(buffer.size() - 1));
+}
+
+bool isPalindromeOrTooSmall(const vector<char> &buffer) {
+    if (buffer.size() < 2)
+        return true;
+    if (startAndEndAreSameChar(buffer)) {
+        vector<char> shortenedBuf = buffer;
+        shortenedBuf.pop_back();
+        shortenedBuf.erase(shortenedBuf.begin());
+        return isPalindromeOrTooSmall(shortenedBuf);
+    } else {
+        return false;
+    }
 }
 
 string longestPalindrome(string str) {
     vector<char> buffer = {};
 
-    for (char c : str) {
-        buffer.push_back(c);
+    for (int i = 0; i < str.length(); i++) {
+        buffer.push_back(str[i]);
 
-        /* if (buffer.size() <= 1) {
-            continue;
-        } */
-
-        for (int i = buffer.size(); i < str.length() - 1; i++) {
+        for (int j = i + 1; j < str.length() - 1; j++) {
+            buffer.push_back(str[j]);
 
             if (startAndEndAreSameChar(buffer)) {
-                cout << "is same: " << buffer.at(0) << " " << str[i] << endl;
+                cout << "is same: " << buffer.at(0) << " " << str[j] << endl;
 
-                vector<char> shortenedBuf = buffer;
-                shortenedBuf.pop_back();
-                shortenedBuf.erase(shortenedBuf.begin());
-
-                cout << "address of buffer: " << &buffer << endl;
-                cout << "address of shortenedList: " << &shortenedBuf << endl;
-
-                // check
+                if (isPalindromeOrTooSmall(buffer)) {
+                    for (char c : buffer) {
+                        cout << c << ", ";
+                    }
+                    break;
+                }
             }
-
-            // at the end, reset buffer
-            buffer.clear();
         }
+        // at the end, reset buffer
+        buffer.clear();
     }
 
     // vs code setting: C_Cpp.clang_format_fallbackStyle -> copy as json -> { BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}
