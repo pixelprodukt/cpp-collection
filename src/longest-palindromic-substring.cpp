@@ -22,8 +22,6 @@ Constraints:
 s consist of only digits and English letters.
 
 */
-#include "../include/longest-palindromic-substring.hpp"
-
 #include <algorithm>
 #include <iostream>
 #include <vector>
