@@ -1,6 +1,6 @@
 # cpp-collection
 
-This is a small repo for learning c++ through solving [coding interview questions](https://github.com/ombharatiya/FAANG-Coding-Interview-Questions) which are used bei FAANG Corporations.
+This is a small repo for learning c++ through solving [coding interview questions](https://github.com/ombharatiya/FAANG-Coding-Interview-Questions) and to try out the syntax and language specific features.
 
 # build
 
