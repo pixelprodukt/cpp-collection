@@ -45,9 +45,15 @@ static void printVector(const std::vector<Data>& vector) {
     std::cout << " }\n";
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    LogLevel level = ERROR;
+    std::cout << "argc: " << argc << "\n";
+
+    for (int i = 1; i <= argc - 1; i++) {
+        std::cout << i << ". argv: " << argv[i] << "\n";
+    }
+
+    /* LogLevel level = ERROR;
     Logger log(level);
 
     log.info("Sollte nur bei LogLevel INFO zu sehen sein.");
@@ -64,7 +70,7 @@ int main() {
     printVector(vector);
 
     std::cout << allocationCount << " allocations\n";
-    std::cout << copyCount << " copies\n";
+    std::cout << copyCount << " copies\n"; */
     
 
     /* std::vector<int> nums = {12, 17, 2, 7, 11, 15};
